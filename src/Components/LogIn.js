@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const LogIn = () => {
     return (
 
@@ -25,7 +26,7 @@ const LogIn = () => {
 
                                 <button className="btn btn-success mt-2 pt-1 pb-1 " type="button" >Connexion</button>
                             </div>
-                            <p className="text-center mt-3"><a href="register.html"> S'insecrire</a></p>
+                            <p className="text-center mt-3"><Link to="/register"> S'insecrire</Link></p>
                             </div>
                     </form>
                 </div>
