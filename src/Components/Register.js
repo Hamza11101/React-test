@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 
 const Register = () => {
     const [FName, setFName] = useState("");
@@ -71,7 +71,7 @@ const Register = () => {
                                                
                                                     <div className="d-grid gap-2">
 
-                                                        <button id="sub" className="btn btn-success mt-2 pt-1 pb-1 " type="submit" >S'insecrire</button>
+                                                        <button id="sub" className="btn btn-success mt-2 pt-1 pb-1 " type="submit" ><Link to="/login">S'insecrire</Link></button>
                                                     </div>
                                                 </div>
                                             </form>

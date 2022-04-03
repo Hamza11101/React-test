@@ -1,21 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link ,useHistory,useParams} from "react-router-dom";
 import useFetch from "./UseFetch";
 import { useState } from "react";
+// import Profile from "./Profile";
 
 const LogIn = () => {
+    const history = useHistory();
 const [Email, setEmail] = useState("")
 const [PassWord, setPassWord] = useState("")
+const { Data } = useFetch("http://localhost:8000/Users/");
+// const{id}=useParams();
 const HandeleSubmit=(e)=>{
-    e.preventDeafault();
-    const {Data} = useFetch("http://localhost:8000/Users");
+    e.preventDefault();
+    
     let  login  =Data.find(x => x.Email===Email && x.PassWord===PassWord);
     console.log(login);
     
+    
   
     if (login != null) {
-      
-        
-      console.log("hello");
+       
+    history.push(`/profile/${login.id}`)
+    
     }
 }   
 
